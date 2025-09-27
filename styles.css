@@ -1,0 +1,241 @@
+@font-face {
+    font-family: 'BeautifullyDelicious';
+    src: url('fonnts.com-701107/fonts/fonnts.com-bdscript-bold.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Fraunces", serif;
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    z-index: 10;
+}
+
+header .logoText {
+    font-family: 'BeautifullyDelicious', cursive;
+    font-size: 68px;
+    font-weight: 100;
+    color: #000;
+}
+
+
+.logo {
+    height: 200px;
+}
+
+/* Left side (image) */
+.main {
+    flex: 1;
+    background: url('left.jpg') no-repeat center center/cover;
+    position: relative;
+}
+
+.hero-overlay {
+    background-color: rgba(255, 255, 255, 0.2);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Social icons */
+.social {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 6px;
+    border-radius: 8px;
+}
+
+.socialLink {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 6px;
+}
+
+.socialLink a {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    /* يخليها دائرة */
+    background-color: #000000;
+    /* لون خلفية خفيف */
+    color: #ffffff;
+    /* لون الأيقونة */
+    font-size: 20px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.socialLink a:hover {
+    background-color: #fff;
+    /* لون الدائرة عند الهوفر */
+    color: #000;
+    /* لون الأيقونة عند الهوفر */
+    transform: scale(1.1);
+    /* تكبر شوية */
+}
+
+
+.socialLink a:hover::after {
+    transform: scaleX(1);
+}
+
+
+.socialLink a,
+.social a {
+    color: #ffffff;
+    font-size: 24px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social a:hover {
+    color: #42423b;
+}
+
+
+.main .text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.main h1 {
+    font-size: 72px;
+    font-weight: 300;
+    margin-bottom: 30px;
+    color: #000;
+}
+
+.subscribe {
+    width: 100%;
+}
+
+.subscribe p {
+    font-size: 22px;
+    font-weight: 200;
+    margin-bottom: 10px;
+}
+
+/* Form */
+.subscribeForm {
+    text-align: center;
+}
+
+.subscribe input {
+    width: 70%;
+    padding: 12px;
+    margin-bottom: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.subscribe input.invalid {
+    border-color: red;
+}
+
+.error-msg {
+    display: none;
+    font-size: 14px;
+    color: red;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.success-msg {
+    display: none;
+    font-size: 14px;
+    color: green;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.subscribe button {
+    width: 29%;
+    padding: 12px;
+    background: #000000;
+    color: #fff;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.subscribe button:hover {
+    background: #42423b;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    body {
+        flex-direction: column;
+    }
+
+
+    /* Social icons */
+    /* .social {
+        position: absolute;
+        bottom: 20px;
+        top: auto;
+        left: 50%;
+        transform: translatex(-50%);
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+
+    }
+
+    .social a {
+        color: #000000;
+        font-size: 24px;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+    .social a:hover {
+        color: #0066ff;
+    } */
+
+    .subscribe input {
+        width: 100%;
+    }
+
+    .subscribe button {
+        width: 100%;
+    }
+}

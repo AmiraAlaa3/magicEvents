@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Fraunces:wght@200;300;400;600&display=swap"
+            rel="stylesheet">
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="styles.css">
+
+        <title>Coming Soon</title>
+    </head>
+    <body>
+
+        <!-- Header -->
+        <header>
+            <h1 class="logoText">magic events</h1>
+        </header>
+
+        <div class="main">
+            <div class="hero-overlay"></div>
+            <!-- <div class="social">
+                <a href="#">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="mailto:info@example.com">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+            </div> -->
+            <div class="text">
+                <h1>Coming Soon</h1>
+                <div class="subscribe">
+                    <p>Be The First To Know When</p>
+                    <p>We Go Live</p>
+                    <!-- Form with validation -->
+                    <form id="subscribeForm" novalidate>
+                        <input type="email" id="email" placeholder="Email *"
+                            required>
+                        <button type="submit">Notify Me</button>
+                        <span class="error-msg" id="errorMsg">⚠ Enter a valid
+                            email like example@gmail.com</span>
+                        <span class="success-msg" id="successMsg">🎉 Thank you!
+                            You have successfully subscribed.</span>
+                    </form>
+                </div>
+            </div>
+
+            <div class="socialLink">
+                <a href="#">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="mailto:info@example.com">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+        <!-- JS for validation -->
+        <script>
+    const form = document.getElementById("subscribeForm");
+    const email = document.getElementById("email");
+    const errorMsg = document.getElementById("errorMsg");
+    const successMsg = document.getElementById("successMsg");
+
+    form.addEventListener("submit", function(e) {
+      e.preventDefault(); // stop refresh
+
+      if (!email.checkValidity()) {
+        email.classList.add("invalid");
+        errorMsg.style.display = "block";
+        successMsg.style.display = "none";
+      } else {
+        email.classList.remove("invalid");
+        errorMsg.style.display = "none";
+        successMsg.style.display = "block";
+
+        email.value = ""; // clear input
+      }
+    });
+  </script>
+
+    </body>
+</html>
